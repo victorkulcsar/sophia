@@ -1,0 +1,53 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "sub": "Analytics",
+      "tecnologia": "Google Analytics",
+      "descricao": "",
+      "conhecimento": "3"
+    },
+    {
+      "id": 2,
+      "sub": "Analytics",
+      "tecnologia": "Google Tag Manager",
+      "descricao": "",
+      "conhecimento": 0
+    },
+    {
+      "id": 3,
+      "sub": "DevOps",
+      "tecnologia": "Mongo DB",
+      "descricao": "Banco de dados não relacional",
+      "conhecimento": 3
+    },
+    {
+      "id": 4,
+      "sub": "DevOps",
+      "tecnologia": "Oracle Database",
+      "descricao": "Banco de dados",
+      "conhecimento": 2
+    },
+    {
+      "id": 5,
+      "sub": "DevOps",
+      "tecnologia": "Git",
+      "descricao": "Versionamento de codigo",
+      "conhecimento": 1
+    },
+    {
+      "id": 6,
+      "sub": "DevOps",
+      "tecnologia": "Jenkins",
+      "descricao": "CI",
+      "conhecimento": 3
+    },
+    {
+      "id": 7,
+      "sub": "DevOps",
+      "tecnologia": "ESLint",
+      "descricao": "",
+      "conhecimento": 0
+    }
+  ]
+}
