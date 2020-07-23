@@ -17,5 +17,18 @@ server.route('/data')
   .get(auth, controller.dataController.get)
   .post(auth, controller.dataController.post)
 
+server.route('/users')
+  .get(auth, controller.userController.view)
+
+server.route('/graphic')
+  .get(auth, controller.graphicController.view)
+
+server.route('/editor')
+  .get(auth, controller.editorController.view)
+
+server.route('/editor/data')
+  .get(auth, controller.editorController.data)
+
+
 server.listen();
 
