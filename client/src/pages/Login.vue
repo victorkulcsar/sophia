@@ -125,11 +125,11 @@ export default {
 	data () {
     return {
 			email: {
-				value: 'padrao',
+				value: 'manager',
 				isValid: false
 			},
 			password: {
-				value: '3a903daz',
+				value: '24503d6z',
 				isValid: false
 			}
 		}

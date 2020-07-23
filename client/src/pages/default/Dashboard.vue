@@ -1,6 +1,6 @@
 <template>
   <div>
-  <Navbar logged />
+  <Navbar :menus="[]" />
     <div class="dashboard">
       <div class="container">
         <div class="row">
@@ -34,7 +34,7 @@
                         <option
                           v-for="(skill, index) in skills" 
                           :key="index"
-                          :selected="parseInt(item.id) === index"
+                          :selected="item.conhecimento === index"
                           :value="index"
                         >
                           {{ skill }}
@@ -82,20 +82,14 @@ export default {
       })
       this.data = data;
     },
-    checkSkill(item) {
-      console.log(item)
-      switch (item.conhecimento) {
-        case 0:
-          return 'danger';
-        case 1:
-          return 'warning';
-        case 2:
-          return 'info';
-        case 3:
-          return 'success';
-        default:
-          return '';
+    checkSkill({conhecimento}) {
+      const skillColor = {
+        0: 'danger',
+        1: 'warning',
+        2: 'info',
+        3: 'success',
       }
+      return skillColor[conhecimento] || 'danger'
     }
   },
   data: () => ({

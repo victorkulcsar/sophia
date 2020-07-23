@@ -1,41 +1,29 @@
 <template>
 <div class="navbar-custom">
   <div class="md-accent md-toolbar" :class="{'md-elevation-1': logged}">
-    Sophia
-    <div 
-      class="navbar-custom--divider"
-      v-if="logged"
-    >
-    </div>
+    <p class="navbar-custom--text-logo">Sophia<p>
+    <div class="navbar-custom--divider"></div>
 
     <div class="md-toolbar-section-start navbar-custom-menu">
-      <!-- <button 
-        class="navbar-custom-menu--button md-button navbar-custom--button"
-        :md-ripple="false"
-        @click="() => $route.push('/register')"
-        v-if="logged"
-      >
-        Cadastro
-      </button>
       <button 
         class="navbar-custom-menu--button md-button navbar-custom--button"
         :md-ripple="false"
-        @click="() => $route.push('/list')"
-        v-if="logged"
+        @click="() => $route.push(menu.link)"
+        v-for="(menu, index) in menus"
+        :key="index"
       >
-        Listar
-      </button> -->
+        {{ menu.item }}
+      </button>
     </div>
 
     <div class="md-toolbar-section-end">
       <button
         :md-ripple="false" 
         class="navbar-custom--button md-button navbar-custom--button"
-        @click="() => $route.push('/login')"
-        data-test-button-goto-login
+        @click="logout"
         v-if="!logged"
         >
-          Login
+          sair
         </button>
     </div>
   </div>
@@ -47,17 +35,26 @@
 export default {
   name: 'Navbar',
   props: {
-    logged: {
-      type: Boolean,
-      default: false
+    menus: {
+      type: Array,
+      default: []
     }
   },
-  methods: {}
+  methods: {
+    logout() {
+      this.$cookies.remove('hash');
+      this.$route.push("/")
+    }
+  }
 }
 </script>
 
 <style lang="scss" scoped>
 .navbar-custom {
+  &--text-logo {
+    font-size: 15px;
+  }
+
   & .md-button {
     color: #42b883;
   }

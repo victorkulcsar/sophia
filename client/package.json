@@ -14,11 +14,13 @@
     "plato": "plato -r -d report src"
   },
   "dependencies": {
+    "apexcharts": "^3.19.3",
     "axios": "^0.19.2",
     "element-ui": "^2.13.1",
     "plato": "^1.7.0",
     "sonar-scanner": "^3.1.0",
     "vue": "^2.6.11",
+    "vue-apexcharts": "^1.6.0",
     "vue-cookies": "^1.7.2",
     "vuedraggable": "^2.23.2",
     "vuetify": "^2.3.4"
