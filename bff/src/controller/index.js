@@ -5,6 +5,8 @@ import registerController from './registerController'
 import graphicController from './graphicController'
 import userController from './userController'
 import editorController from './editorController'
+import guruController from './guruController'
+import recommendedController from './recommendedController'
 
 module.exports = {
   loginController,
@@ -13,5 +15,7 @@ module.exports = {
   registerController,
   graphicController,
   userController,
-  editorController
+  editorController,
+  guruController,
+  recommendedController,
 }

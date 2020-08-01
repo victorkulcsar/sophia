@@ -4,7 +4,7 @@
 			<div class="wrap-login100 p-t-50 p-b-90">
 				<div>
 					<span class="login100-form-title p-b-51">
-						<h3>Sophia</h3>
+						<img src="../assets/logo.svg" width="250px" alt="logo">
 					</span>
 					
 					<div 
@@ -79,7 +79,6 @@
 import axios from 'axios'
 
 export default {
-  name: 'login',
   props: {},
   created() {
 		$cookies.remove('hash');
@@ -125,11 +124,11 @@ export default {
 	data () {
     return {
 			email: {
-				value: 'manager',
+				value: '',
 				isValid: false
 			},
 			password: {
-				value: '24503d6z',
+				value: '',
 				isValid: false
 			}
 		}

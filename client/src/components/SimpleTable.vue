@@ -2,7 +2,7 @@
   <v-simple-table>
     <template v-slot:default>
       <thead>
-        <tr>
+        <tr class="legend">
           <slot name="th"></slot>
         </tr>
       </thead>
@@ -19,5 +19,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+.legend {
+  background: #ddd
+}
 </style>

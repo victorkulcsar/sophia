@@ -1,8 +1,7 @@
 {
   "users": 
     [
-      { "id": 22, "name": "padrao", "pass": "3a903daz", "role": "default" },
-      { "id": 59,"name": "manager", "pass": "24503d6z", "role": "manager" },
-      { "id": 103,"name": "public", "pass": "3a9ddac3az", "role": "public" }
+      { "id": 22, "name": "laercio", "pass": "123456", "role": "default" },
+      { "id": 59,"name": "manager", "pass": "123456", "role": "manager" }
     ]
 }

@@ -11,7 +11,7 @@
           <Charts
             title="Evolução mensal de conhecimento"
             :series="[{
-              name: 'skill',
+              name: 'Conhecimento',
               data: [30, 36, 42, 45, 60, 62]
             }]"
             :options="{
@@ -43,6 +43,7 @@
                 type: 'bar',
                 height: 350,
                 stacked: true,
+                stackType: '100%',
                 toolbar: {
                   show: true
                 },

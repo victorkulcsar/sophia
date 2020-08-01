@@ -1,55 +1,62 @@
 <template>
-  <div>
-  <Navbar :menus="[]" />
-    <div class="dashboard">
-      <div class="container">
-        <div class="row">
-            <v-col  cols="12" sm="12">
-              <SimpleTable> 
-                <template v-slot:th>
-                  <th
-                    class="text-left" 
-                    v-for="(legend, index) in legends" 
-                    :key="index"
-                    :id="index"
-                  >
-                    {{ legend }}
-                  </th>
-                  <th id="0"></th>
-                </template>
+<div>
+  <Navbar :menus="[
+    { item: 'Principal', link: '/dashboard' },
+    { item: 'Gurus', link: '/guru' },
+    { item: 'Recomendação', link: '/recommended' },
+    ]"
+  />
 
-                <template v-slot:td>
-                  <tr 
-                    v-for="item in filtered" 
-                    :key="item.name"
-                    :class="checkSkill(item)"
-                  >
-                    <td>{{ item.area }}</td>
-                    <td>{{ item.sub }}</td>
-                    <td>{{ item.tecnologia }}</td>
-                    <td>
-                      <select
-                        @change="selectSkill($event, item.id)"
-                      >
-                        <option
-                          v-for="(skill, index) in skills" 
-                          :key="index"
-                          :selected="item.conhecimento === index"
-                          :value="index"
-                        >
-                          {{ skill }}
-                        </option>
-                      </select> 
-                    </td>
-                  </tr>
-                </template>
+  <v-breadcrumbs :items="items" />
 
-              </SimpleTable>
-            </v-col>
-        </div>
-      </div>  
-    </div>
-  </div>
+  <v-container fluid>
+      <v-row>
+        <v-col>
+
+          <SimpleTable> 
+            <template v-slot:th>
+              <th
+                class="text-left" 
+                v-for="(legend, index) in legends" 
+                :key="index"
+                :id="index"
+              >
+                {{ legend.toUpperCase() }}
+              </th>
+              <th id="0"></th>
+            </template>
+
+            <template v-slot:td>
+              <tr 
+                v-for="item in filtered" 
+                :key="item.name"
+                :class="checkSkill(item)"
+              >
+                <td>{{ item.area }}</td>
+                <td>{{ item.sub }}</td>
+                <td>{{ item.tecnologia }}</td>
+                <td>
+                  <select
+                    @change="selectSkill($event, item.id)"
+                  >
+                    <option
+                      v-for="(skill, index) in skills" 
+                      :key="index"
+                      :selected="item.conhecimento === index"
+                      :value="index"
+                    >
+                      {{ skill }}
+                    </option>
+                  </select> 
+                </td>
+              </tr>
+            </template>
+
+        </SimpleTable>
+      </v-col>
+    </v-row>
+  </v-container>
+</div>
 </template>
 
 <script>
@@ -58,7 +65,6 @@ import Navbar from '../../components/Navbar.vue'
 import SimpleTable from '../../components/SimpleTable.vue'
 
 export default {
-  name: 'Dashboard',
   components: {
     Navbar, SimpleTable
   },
@@ -97,6 +103,13 @@ export default {
     data: [],
     legends: ["area", "sub", "tecnologia"],
     search: "",
+    items: [
+      {
+        text: 'Dashboard',
+        disabled: false,
+        href: 'dashboard',
+      },
+    ],
   })
 }
 </script>

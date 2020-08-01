@@ -1,41 +1,37 @@
 <template>
-  <div>
-    <Navbar :menus="menus"/>
-    <v-container fluid class="dashboard">
-      <v-row
-        :align="alignment"
-        :justify="justify"
-        class="grey lighten-5"
-      >
-        <v-col>
-          <SimpleTable> 
-            <template v-slot:th>
-              <th class="text-left" id="0">Sub</th>
-              <th 
-                class="text-left" 
-                v-for="(user, index) in users"
-                :key="index"
-                :id="index"
-              >{{ user.name }}</th>
-            </template>
-            <!--  -->
-            <template v-slot:td>
-              <tr v-for="(item, index) in modelo" :key="index">
-                <td>{{ item.tecnologia }}</td>
-                <td 
-                  :class="setSkillColor(user[item.id])" 
-                  v-for="(user, index) in users" 
-                  :key="index">
-                  {{ legendSkill(user[item.id]) }}
-                </td>
-              </tr>
+<div>
+  <Navbar :menus="menus"/>
+  
+  <v-container fluid>
+    <v-row>
+      <v-col>
+        <SimpleTable> 
+          <template v-slot:th>
+            <th class="text-left" id="0">TECNOLOGIA</th>
+            <th 
+              class="text-left" 
+              v-for="(user, index) in users"
+              :key="index"
+              :id="index"
+            >{{ user.name }}</th>
+          </template>
 
-            </template>
-          </SimpleTable>
-        </v-col>
-      </v-row>
-    </v-container>
-  </div>
+          <template v-slot:td>
+            <tr v-for="(item, index) in modelo" :key="index">
+              <td>{{ item.tecnologia }}</td>
+              <td 
+                :class="setSkillColor(user[item.id])" 
+                v-for="(user, index) in users" 
+                :key="index">
+                {{ legendSkill(user[item.id]) }}
+              </td>
+            </tr>
+          </template>
+        </SimpleTable>
+      </v-col>
+    </v-row>
+  </v-container>
+</div>
 </template>
 
 <script>
@@ -81,7 +77,7 @@ export default {
       { item: 'Edição', link: '/editor' },
     ],
     modelo: data,
-    users: [Laercio, Jose, Marcelo, Pedro, Joao]
+    users: [Laercio, Jose, Marcelo, Pedro, Joao],
   })
 }
 </script>

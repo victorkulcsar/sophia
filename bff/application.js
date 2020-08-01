@@ -29,6 +29,11 @@ server.route('/editor')
 server.route('/editor/data')
   .get(auth, controller.editorController.data)
 
+server.route('/guru')
+  .get(auth, controller.guruController.view)
+
+server.route('/recommended')
+  .get(auth, controller.recommendedController.view)
 
 server.listen();
 

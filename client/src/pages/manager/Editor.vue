@@ -28,7 +28,7 @@
       >
         <v-col>
           <SimpleTable> 
-            <template v-slot:th>
+            <template v-slot:th >
               <th id="0" class="text-left">
                 <div>
                   <i aria-hidden="true" class="v-icon notranslate mdi mdi-checkbox-marked theme--light primary--text"></i>
@@ -44,7 +44,7 @@
                 :key="index"
                 :id="index"
               >
-                {{ legend }}
+                {{ legend.toUpperCase() }}
               </th>
               <th id="0"></th>
             </template>

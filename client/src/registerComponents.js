@@ -6,6 +6,8 @@ import DashboardPublic from './pages/public/Dashboard'
 import Graphic from './pages/manager/Graphic'
 import Users from './pages/manager/Users'
 import Editor from './pages/manager/Editor'
+import Guru from './pages/default/Guru'
+import Recommended from './pages/default/Recommended'
 
 Vue.component('login-page', Login);
 Vue.component('dashboard-default-page', DashboardDefault);
@@ -14,5 +16,7 @@ Vue.component('dashboard-public-page', DashboardPublic);
 Vue.component('graphic-manager-page', Graphic);
 Vue.component('users-manager-page', Users);
 Vue.component('editor-manager-page', Editor);
+Vue.component('guru-manager-page', Guru);
+Vue.component('recommended-manager-page', Recommended);
 
 export default Vue

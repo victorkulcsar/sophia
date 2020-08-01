@@ -1,12 +1,14 @@
 <template>
 <div class="navbar-custom">
-  <div class="md-accent md-toolbar" :class="{'md-elevation-1': logged}">
-    <p class="navbar-custom--text-logo">Sophia<p>
+  <div class="md-toolbar" :class="{'md-elevation-1': logged}">
+    <p class="navbar-custom--text-logo">
+      <img src="../assets/logo1.svg" alt="logo" class="logo--image">
+    <p>
     <div class="navbar-custom--divider"></div>
 
-    <div class="md-toolbar-section-start navbar-custom-menu">
+    <div class="md-toolbar-section-start">
       <button 
-        class="navbar-custom-menu--button md-button navbar-custom--button"
+        class="md-button item-menu"
         :md-ripple="false"
         @click="() => $route.push(menu.link)"
         v-for="(menu, index) in menus"
@@ -19,7 +21,7 @@
     <div class="md-toolbar-section-end">
       <button
         :md-ripple="false" 
-        class="navbar-custom--button md-button navbar-custom--button"
+        class="md-button item-menu"
         @click="logout"
         v-if="!logged"
         >
@@ -52,11 +54,27 @@ export default {
 <style lang="scss" scoped>
 .navbar-custom {
   &--text-logo {
+    color: white;
     font-size: 15px;
+    font-weight: bold;
   }
 
-  & .md-button {
-    color: #42b883;
+  & .logo--image {
+    width: 70px;
+    margin-top: 10px;
+  }
+
+  & .md-toolbar{
+    background: #42b883
+  }
+
+  & .item-menu {
+    color: white;
+    font-weight: 700;
+  }
+
+  & .md-button:not([disabled]):hover:before {
+    background: #42b883
   }
 
   &--button {
