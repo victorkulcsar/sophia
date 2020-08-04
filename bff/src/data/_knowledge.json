@@ -1,0 +1,728 @@
+{   
+    "data": [
+      {
+        "id": "1",
+        "area": "BackEnd",
+        "sub": "Banco de Dados",
+        "tecnologia": "MongoDB"
+      },
+      {
+        "id": "2",
+        "area": "BackEnd",
+        "sub": "Banco de Dados",
+        "tecnologia": "Oracle Database"
+      },
+      {
+        "id": "3",
+        "area": "BackEnd",
+        "sub": "CI",
+        "tecnologia": "Maven"
+      },
+      {
+        "id": "4",
+        "area": "BackEnd",
+        "sub": "JAVA",
+        "tecnologia": "Spring Framework"
+      },
+      {
+        "id": "5",
+        "area": "BackEnd",
+        "sub": "JAVA",
+        "tecnologia": "Spring MVC"
+      },
+      {
+        "id": "6",
+        "area": "BackEnd",
+        "sub": "JAVA",
+        "tecnologia": "Spring Data MongoDB"
+      },
+      {
+        "id": "7",
+        "area": "BackEnd",
+        "sub": "JAVA",
+        "tecnologia": "Spring Boot"
+      },
+      {
+        "id": "8",
+        "area": "BackEnd",
+        "sub": "JAVA",
+        "tecnologia": "Spring Integration"
+      },
+      {
+        "id": "9",
+        "area": "BackEnd",
+        "sub": "JAVA / Teste",
+        "tecnologia": "Junit"
+      },
+      {
+        "id": "10",
+        "area": "BackEnd",
+        "sub": "JAVA / Teste",
+        "tecnologia": "Mockito"
+      },
+      {
+        "id": "11",
+        "area": "BackEnd",
+        "sub": "JAVA / Teste",
+        "tecnologia": "Fixture Factory"
+      },
+      {
+        "id": "12",
+        "area": "BackEnd",
+        "sub": "JAVA",
+        "tecnologia": "Soap (JAXB)"
+      },
+      {
+        "id": "13",
+        "area": "BackEnd",
+        "sub": "Linguagem",
+        "tecnologia": "Python"
+      },
+      {
+        "id": "14",
+        "area": "BackEnd",
+        "sub": "Linguagem",
+        "tecnologia": "Java"
+      },
+      {
+        "id": "15",
+        "area": "BackEnd",
+        "sub": "Linguagem",
+        "tecnologia": "Swift"
+      },
+      {
+        "id": "16",
+        "area": "BackEnd",
+        "sub": "Linguagem",
+        "tecnologia": "Android"
+      },
+      {
+        "id": "17",
+        "area": "BackEnd",
+        "sub": "Linguagem",
+        "tecnologia": "GO"
+      },
+      {
+        "id": "18",
+        "area": "BackEnd",
+        "sub": "Programa",
+        "tecnologia": "SoapUI"
+      },
+      {
+        "id": "19",
+        "area": "FrontEnd",
+        "sub": "Testes",
+        "tecnologia": "Site Prism"
+      },
+      {
+        "id": "20",
+        "area": "BackEnd",
+        "tecnologia": "Gerenciador de Memoria"
+      },
+      {
+        "id": "21",
+        "area": "BackEnd",
+        "tecnologia": "ORM"
+      },
+      {
+        "id": "22",
+        "area": "BackEnd",
+        "sub": "Teste",
+        "tecnologia": "Teste de Integracao / E2E"
+      },
+      {
+        "id": "23",
+        "area": "BackEnd",
+        "tecnologia": "MemCached"
+      },
+      {
+        "id": "24",
+        "area": "Arquitetura",
+        "tecnologia": "Nginx"
+      },
+      {
+        "id": "25",
+        "area": "BackEnd",
+        "tecnologia": "JVM/JDK"
+      },
+      {
+        "id": "26",
+        "area": "BackEnd",
+        "sub": "Linguagem",
+        "tecnologia": "Kotlin"
+      },
+      {
+        "id": "27",
+        "area": "Backend",
+        "sub": "Java",
+        "tecnologia": "Quarkus"
+      },
+      {
+        "id": "28",
+        "area": "DevOps",
+        "sub": "Cache",
+        "tecnologia": "Redis"
+      },
+      {
+        "id": "29",
+        "area": "Geral",
+        "sub": "Testes",
+        "tecnologia": "Tests Components"
+      },
+      {
+        "id": "30",
+        "area": "Geral",
+        "tecnologia": "HTTP / HTTPS"
+      },
+      {
+        "id": "31",
+        "area": "Geral",
+        "tecnologia": "DNS"
+      },
+      {
+        "id": "32",
+        "area": "Arquitetura",
+        "sub": "Teste",
+        "tecnologia": "Piramide de Teste"
+      },
+      {
+        "id": "33",
+        "area": "Arquitetura",
+        "tecnologia": "CORS"
+      },
+      {
+        "id": "34",
+        "area": "Arquitetura",
+        "sub": "Certificado",
+        "tecnologia": "SSL / TLS"
+      },
+      {
+        "id": "35",
+        "area": "BackEnd",
+        "tecnologia": "Circuit Breaker"
+      },
+      {
+        "id": "36",
+        "area": "Geral",
+        "sub": "S.O",
+        "tecnologia": "Linux"
+      },
+      {
+        "id": "37",
+        "area": "DevOps",
+        "sub": "CI",
+        "tecnologia": "Jenkins"
+      },
+      {
+        "id": "38",
+        "area": "FrontEnd",
+        "sub": "Análise Estática",
+        "tecnologia": "ESLint"
+      },
+      {
+        "id": "39",
+        "area": "DevOps",
+        "sub": "Análise Estática",
+        "tecnologia": "SonarQube"
+      },
+      {
+        "id": "40",
+        "area": "FrontEnd",
+        "sub": "Analyics",
+        "tecnologia": "Google Analytics"
+      },
+      {
+        "id": "41",
+        "area": "FrontEnd",
+        "sub": "Analyics",
+        "tecnologia": "Google Tag Manager"
+      },
+      {
+        "id": "42",
+        "area": "DevOps",
+        "sub": "CD",
+        "tecnologia": "Nexus Repository"
+      },
+      {
+        "id": "43",
+        "area": "DevOps",
+        "sub": "CD",
+        "tecnologia": "Spinnaker"
+      },
+      {
+        "id": "44",
+        "area": "Arquitetura",
+        "sub": "CD",
+        "tecnologia": "Helm"
+      },
+      {
+        "id": "45",
+        "area": "FrontEnd",
+        "sub": "CI",
+        "tecnologia": "Webpack"
+      },
+      {
+        "id": "46",
+        "area": "DevOps",
+        "sub": "Containers",
+        "tecnologia": "Docker"
+      },
+      {
+        "id": "47",
+        "area": "DevOps",
+        "sub": "Containers",
+        "tecnologia": "Kubernetes"
+      },
+      {
+        "id": "48",
+        "area": "BackEnd",
+        "sub": "Contratos",
+        "tecnologia": "Swagger"
+      },
+      {
+        "id": "49",
+        "area": "FrontEnd",
+        "sub": "Controle de estado",
+        "tecnologia": "Redux"
+      },
+      {
+        "id": "50",
+        "area": "FrontEnd",
+        "sub": "CSS",
+        "tecnologia": "SMACSS"
+      },
+      {
+        "id": "51",
+        "area": "FrontEnd",
+        "sub": "CSS",
+        "tecnologia": "funcao rem(), "
+      },
+      {
+        "id": "52",
+        "area": "FrontEnd",
+        "sub": "CSS",
+        "tecnologia": "SASS"
+      },
+      {
+        "id": "53",
+        "area": "FrontEnd",
+        "sub": "CSS",
+        "tecnologia": "CSS3"
+      },
+      {
+        "id": "54",
+        "area": "FrontEnd",
+        "sub": "CSS",
+        "tecnologia": "BEM"
+      },
+      {
+        "id": "55",
+        "area": "FrontEnd",
+        "sub": "CSS",
+        "tecnologia": "Materialize CSS"
+      },
+      {
+        "id": "56",
+        "area": "FrontEnd",
+        "sub": "CSS",
+        "tecnologia": "Class Element"
+      },
+      {
+        "id": "57",
+        "area": "FrontEnd",
+        "sub": "Framework",
+        "tecnologia": "Bootstrap"
+      },
+      {
+        "id": "58",
+        "area": "BackEnd",
+        "sub": "Framework NodeJS",
+        "tecnologia": "ExpressJS"
+      },
+      {
+        "id": "59",
+        "area": "FrontEnd",
+        "sub": "Framework para ClientSide",
+        "tecnologia": "Flux"
+      },
+      {
+        "id": "60",
+        "area": "FrontEnd",
+        "sub": "Framework para frontend",
+        "tecnologia": "Vue.js"
+      },
+      {
+        "id": "61",
+        "area": "FrontEnd",
+        "sub": "Gerenciador de Pacotes",
+        "tecnologia": "NPM"
+      },
+      {
+        "id": "62",
+        "area": "FrontEnd",
+        "sub": "HTML",
+        "tecnologia": "HTML5"
+      },
+      {
+        "id": "63",
+        "area": "FrontEnd",
+        "sub": "HTML Template",
+        "tecnologia": "Mustache"
+      },
+      {
+        "id": "64",
+        "area": "FrontEnd",
+        "sub": "Infra",
+        "tecnologia": "Firebase"
+      },
+      {
+        "id": "65",
+        "area": "FrontEnd",
+        "sub": "Gerenciador de Estado",
+        "tecnologia": "Vuex"
+      },
+      {
+        "id": "66",
+        "area": "BackEnd",
+        "sub": "Javascript",
+        "tecnologia": "Node.JS"
+      },
+      {
+        "id": "67",
+        "area": "FrontEnd",
+        "sub": "Javascript",
+        "tecnologia": "ES8"
+      },
+      {
+        "id": "68",
+        "area": "FrontEnd",
+        "sub": "Javascript",
+        "tecnologia": "ES7"
+      },
+      {
+        "id": "69",
+        "area": "FrontEnd",
+        "sub": "Javascript",
+        "tecnologia": "ES6"
+      },
+      {
+        "id": "70",
+        "area": "FrontEnd",
+        "sub": "Javascript",
+        "tecnologia": "ECMAScript 2015"
+      },
+      {
+        "id": "71",
+        "area": "FrontEnd",
+        "sub": "Javascript",
+        "tecnologia": "Requirejs"
+      },
+      {
+        "id": "72",
+        "area": "Geral",
+        "sub": "Javascript",
+        "tecnologia": "Design Patterns"
+      },
+      {
+        "id": "73",
+        "area": "BackEnd",
+        "sub": "Java",
+        "tecnologia": "Design Patterns"
+      },
+      {
+        "id": "74",
+        "area": "FrontEnd",
+        "sub": "Javascript",
+        "tecnologia": "Listeners"
+      },
+      {
+        "id": "75",
+        "area": "FrontEnd",
+        "sub": "Javascript",
+        "tecnologia": "Events Javascript"
+      },
+      {
+        "id": "76",
+        "area": "FrontEnd",
+        "sub": "Javascript",
+        "tecnologia": "Element Class"
+      },
+      {
+        "id": "77",
+        "area": "FrontEnd",
+        "sub": "Javascript",
+        "tecnologia": "Progressive Web Apps"
+      },
+      {
+        "id": "78",
+        "area": "FrontEnd",
+        "sub": "Javascript",
+        "tecnologia": "Web Socket"
+      },
+      {
+        "id": "79",
+        "area": "FrontEnd",
+        "sub": "Javascript",
+        "tecnologia": "Location"
+      },
+      {
+        "id": "80",
+        "area": "FrontEnd",
+        "sub": "Javascript",
+        "tecnologia": "Closures"
+      },
+      {
+        "id": "81",
+        "area": "FrontEnd",
+        "sub": "Javascript",
+        "tecnologia": "TypeScript"
+      },
+      {
+        "id": "82",
+        "area": "FrontEnd",
+        "sub": "Javascript",
+        "tecnologia": "Manipular DOM"
+      },
+      {
+        "id": "83",
+        "area": "Geral",
+        "sub": "Linguagem",
+        "tecnologia": "Javascript"
+      },
+      {
+        "id": "84",
+        "area": "BackEnd",
+        "sub": "Linguagem",
+        "tecnologia": "Ruby"
+      },
+      {
+        "id": "85",
+        "area": "BackEnd",
+        "sub": "Logger",
+        "tecnologia": "Winston"
+      },
+      {
+        "id": "86",
+        "area": "Arquitetura",
+        "sub": "Mesh",
+        "tecnologia": "Istio"
+      },
+      {
+        "id": "87",
+        "area": "BackEnd",
+        "sub": "Messageria",
+        "tecnologia": "RabbitMQ"
+      },
+      {
+        "id": "88",
+        "area": "BackEnd",
+        "sub": "Monitoramento",
+        "tecnologia": "Elasticsearch"
+      },
+      {
+        "id": "89",
+        "area": "BackEnd",
+        "sub": "Monitoramento",
+        "tecnologia": "Fluentd"
+      },
+      {
+        "id": "90",
+        "area": "DevOps",
+        "sub": "Monitoramento",
+        "tecnologia": "Kibana"
+      },
+      {
+        "id": "91",
+        "area": "Backend",
+        "sub": "Padrão",
+        "tecnologia": "RESTFul API"
+      },
+      {
+        "id": "92",
+        "area": "Arquitetura",
+        "sub": "Padrão",
+        "tecnologia": "Microservices"
+      },
+      {
+        "id": "93",
+        "area": "Arquitetura",
+        "sub": "Padrão",
+        "tecnologia": "Clean Architecture"
+      },
+      {
+        "id": "94",
+        "area": "FrontEnd",
+        "sub": "Padrão",
+        "tecnologia": "section"
+      },
+      {
+        "id": "95",
+        "area": "Arquitetura",
+        "sub": "Segurança",
+        "tecnologia": "OAuth 2"
+      },
+      {
+        "id": "96",
+        "area": "FrontEnd",
+        "sub": "Testes",
+        "tecnologia": "Jest"
+      },
+      {
+        "id": "97",
+        "area": "BackEnd",
+        "sub": "Testes",
+        "tecnologia": "Cucumber"
+      },
+      {
+        "id": "98",
+        "area": "BackEnd",
+        "sub": "Testes",
+        "tecnologia": "Capybara"
+      },
+      {
+        "id": "99",
+        "area": "Geral",
+        "sub": "Testes",
+        "tecnologia": "Test Driven Development (TDD)"
+      },
+      {
+        "id": "100",
+        "area": "BackEnd",
+        "sub": "Testes",
+        "tecnologia": "LeanFT"
+      },
+      {
+        "id": "101",
+        "area": "BackEnd",
+        "sub": "Testes",
+        "tecnologia": "Gherkin"
+      },
+      {
+        "id": "102",
+        "area": "FrontEnd",
+        "sub": "Testes",
+        "tecnologia": "Stryker"
+      },
+      {
+        "id": "103",
+        "area": "Geral",
+        "sub": "Testes",
+        "tecnologia": "Stub & Mocks"
+      },
+      {
+        "id": "104",
+        "area": "BackEnd",
+        "sub": "Testes / Mobile",
+        "tecnologia": "Appium"
+      },
+      {
+        "id": "105",
+        "area": "Geral",
+        "sub": "Versionamento de Código",
+        "tecnologia": "Git"
+      },
+      {
+        "id": "106",
+        "area": "FrontEnd",
+        "sub": "Javascript",
+        "tecnologia": "Server Side Rendering (SSR)"
+      },
+      {
+        "id": "107",
+        "area": "FrontEnd",
+        "sub": "Javascript",
+        "tecnologia": "GraphQL"
+      },
+      {
+        "id": "108",
+        "area": "FrontEnd",
+        "sub": "Javascript",
+        "tecnologia": "Linter"
+      },
+      {
+        "id": "109",
+        "area": "FrontEnd",
+        "sub": "CSS",
+        "tecnologia": "CSS Modules"
+      },
+      {
+        "id": "110",
+        "area": "FrontEnd",
+        "sub": "CSS",
+        "tecnologia": "Modern CSS"
+      },
+      {
+        "id": "111",
+        "area": "FrontEnd",
+        "sub": "Javascript",
+        "tecnologia": "Shadow DOM"
+      },
+      {
+        "id": "112",
+        "area": "FrontEnd",
+        "sub": "Javascript",
+        "tecnologia": "Custom Elements"
+      },
+      {
+        "id": "113",
+        "area": "FrontEnd",
+        "sub": "Javascript",
+        "tecnologia": "Design System"
+      },
+      {
+        "id": "114",
+        "area": "FrontEnd",
+        "sub": "Padrao",
+        "tecnologia": "Design Theme"
+      },
+      {
+        "id": "115",
+        "area": "FrontEnd",
+        "sub": "Javascript",
+        "tecnologia": "PRPL Patterns"
+      },
+      {
+        "id": "116",
+        "area": "Geral",
+        "sub": "Padrao",
+        "tecnologia": "JSON"
+      },
+      {
+        "id": "117",
+        "area": "Arquitetura",
+        "sub": "Arquitetura",
+        "tecnologia": "Monolito"
+      },
+      {
+        "id": "118",
+        "area": "Geral",
+        "sub": "Programa",
+        "tecnologia": "Postman"
+      },
+      {
+        "id": "119",
+        "area": "FrontEnd",
+        "sub": "Javascript",
+        "tecnologia": "Class"
+      },
+      {
+        "id": "120",
+        "area": "Geral",
+        "sub": "Negocios",
+        "tecnologia": "Jira"
+      },
+      {
+        "id": "121",
+        "area": "Comportamento",
+        "sub": "Negocios",
+        "tecnologia": "Autonomia"
+      },
+      {
+        "id": "122",
+        "area": "Comportamento",
+        "sub": "Negocios",
+        "tecnologia": "Comunicação"
+      }
+    ]
+  }
+  
