@@ -35,6 +35,7 @@
 </template>
 
 <script>
+import axios from 'axios';
 import Navbar from '../../components/Navbar.vue'
 import SimpleTable from '../../components/SimpleTable.vue'
 import { data } from './data/modelo.json'
@@ -49,6 +50,11 @@ export default {
   components: {
     Navbar, SimpleTable
   },
+
+  mounted() {
+    axios.get('/data/squads')
+  },
+
   methods: {
     legendSkill(skill) {
       const legendSkill = {
@@ -70,12 +76,19 @@ export default {
     }
   },
   data: () => ({
-    menus: [
-      { item: 'Principal', link: '/dashboard' },
-      { item: 'Graficos', link: '/graphic' },
-      { item: 'Usuarios', link: '/users' },
-      { item: 'Edição', link: '/editor' },
-    ],
+    menus: {
+      items: [
+        { item: 'Principal', link: '/dashboard' },
+        { item: 'Graficos', link: '/graphic' },
+        { item: 'Usuarios', link: '/users' },
+        { item: 'Edição', link: '/editor' },
+      ],
+      dropdown: [
+        { item:"Todas Squads" },
+        { item: "Foo Fighter" },
+        { item: "The Who" }
+      ]
+    },
     modelo: data,
     users: [Laercio, Jose, Marcelo, Pedro, Joao],
   })

@@ -1,10 +1,6 @@
 <template>
 <div>
-  <Navbar :menus="[
-    { item: 'Principal', link: '/dashboard' },
-    { item: 'Gurus', link: '/guru' },
-    { item: 'Recomendação', link: '/recommended' },
-    ]"
+  <Navbar :menus="menus"
   />
 
   <v-breadcrumbs :items="items" />
@@ -110,6 +106,15 @@ export default {
         href: 'dashboard',
       },
     ],
+    menus: {
+      items: [
+        { item: 'Principal', link: '/dashboard' },
+        { item: 'Graficos', link: '/graphic' },
+        { item: 'Usuarios', link: '/users' },
+        { item: 'Edição', link: '/editor' },
+      ],
+      dropdown: []
+    },
   })
 }
 </script>

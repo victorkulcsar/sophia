@@ -101,11 +101,15 @@ export default {
     data: [],
     legends: ["area", "sub", "tecnologia"],
     search: "",
-    menus: [
-      { item: 'Principal', link: '/dashboard' },
-      { item: 'Gurus', link: '/guru' },
-      { item: 'Recomendação', link: '/recommended' },
-    ],
+    menus: {
+      items: [
+        { item: 'Principal', link: '/dashboard' },
+        { item: 'Graficos', link: '/graphic' },
+        { item: 'Usuarios', link: '/users' },
+        { item: 'Edição', link: '/editor' },
+      ],
+      dropdown: []
+    },
     items: [
       {
         text: 'Dashboard',

@@ -92,11 +92,15 @@ import Navbar from '../../components/Navbar.vue'
 export default {
   components: { Navbar },
   data: () => ({
-    menus: [
-      { item: 'Principal', link: '/dashboard' },
-      { item: 'Gurus', link: '/guru' },
-      { item: 'Recomendação', link: '/recommended' },
-    ],
+    menus: {
+      items: [
+        { item: 'Principal', link: '/dashboard' },
+        { item: 'Graficos', link: '/graphic' },
+        { item: 'Usuarios', link: '/users' },
+        { item: 'Edição', link: '/editor' },
+      ],
+      dropdown: []
+    },
     items: [
       {
         text: 'Dashboard',

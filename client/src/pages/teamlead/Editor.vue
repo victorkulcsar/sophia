@@ -105,12 +105,19 @@ export default {
   },
   data: () => ({
     dialog: false,
-    menus: [
-      { item: 'Principal', link: '/dashboard' },
-      { item: 'Graficos', link: '/graphic' },
-      { item: 'Usuarios', link: '/users' },
-      { item: 'Edição', link: '/editor' },
-    ],
+    menus: {
+      items: [
+        { item: 'Principal', link: '/dashboard' },
+        { item: 'Graficos', link: '/graphic' },
+        { item: 'Usuarios', link: '/users' },
+        { item: 'Edição', link: '/editor' },
+      ],
+      dropdown: [
+        { item:"Todas Squads" },
+        { item: "Foo Fighter" },
+        { item: "The Who" }
+      ]
+    },
     data: [],
     legends: ["area", "sub", "tecnologia"],
     checkbox: [],

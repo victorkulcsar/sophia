@@ -111,12 +111,19 @@ export default {
   data: function () {
     return {
       selected: 1,
-      menus: [
-        { item: 'Principal', link: '/dashboard' },
-        { item: 'Graficos', link: '/graphic' },
-        { item: 'Usuarios', link: '/users' },
-        { item: 'Edição', link: '/editor' },
-      ],
+      menus: {
+        items: [
+          { item: 'Principal', link: '/dashboard' },
+          { item: 'Graficos', link: '/graphic' },
+          { item: 'Usuarios', link: '/users' },
+          { item: 'Edição', link: '/editor' },
+        ],
+        dropdown: [
+          { item:"Todas Squads" },
+          { item: "Foo Fighter" },
+          { item: "The Who" }
+        ]
+      },
       data: {
         1: {
           ...this.modelo(
