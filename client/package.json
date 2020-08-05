@@ -23,8 +23,8 @@
     "vue-apexcharts": "^1.6.0",
     "vue-cookies": "^1.7.2",
     "vue-fragment": "^1.5.1",
-    "vuedraggable": "^2.23.2",
-    "vuetify": "^2.3.4"
+    "vuetify": "^2.3.4",
+    "vue-material": "^1.0.0-beta-12"
   },
   "devDependencies": {
     "@babel/core": "^7.0.1",
@@ -62,10 +62,9 @@
     "ttf-loader": "^1.0.2",
     "vue-jest": "^3.0.5",
     "vue-loader": "https://github.com/graux/vue-loader#a0d6b77",
-    "vue-material": "^1.0.0-beta-12",
     "vue-template-compiler": "^2.4.4",
     "webpack": "^3.6.0",
-    "webpack-dev-server": "^2.9.1"
+    "webpack-dev-server": ">=3.1.11"
   },
   "jest": {
     "moduleFileExtensions": [
