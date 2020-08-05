@@ -2,43 +2,55 @@
   "data": [
     {
       "id": 1,
-      "name": "Levi",
+      "name": "Leandro Viana",
+      "user": "levi",
       "pass": "123456",
-      "role": "manager"
+      "role": "manager",
+      "hierarquia": [1,1,1,1]
     },
     {
       "id": 2,
-      "name": "Jeanne",
+      "name": "Jeanne Gisele",
+      "user": "jeh",
       "pass": "123456",
-      "role": "teamlead"
+      "role": "teamlead",
+      "hierarquia": [1,1,1,1]
     },
     {
       "id": 3,
       "name": "Takemato",
+      "user": "taqueta",
       "pass": "123456",
-      "role": "teamlead"
+      "role": "teamlead",
+      "hierarquia": [1,1,1,1]
     },
     {
       "id": 4,
       "name": "Andrea",
+      "user": "deia",
       "pass": "123456",
-      "role": "seniormanager"
+      "role": "seniormanager",
+      "hierarquia": [1,1,1,1]
     },
     {
       "id": 5,
       "name": "Marcia",
+      "user": "marcinha",
       "pass": "123456",
-      "role": "director"
+      "role": "director",
+      "hierarquia": [1,1,1,1]
     },
     {
       "id": 5,
       "name": "Krieger",
+      "user": "krig",
       "pass": "123456",
       "role": "chief"
     },
     {
       "id": 22,
       "name": "laercio",
+      "user": "lala",
       "pass": "123456",
       "role": "default",
       "knowledge": [
@@ -289,7 +301,7 @@
         {
           "08-2020": {
             "0": 3,
-            "1": 3,
+            "1": 0,
             "2": 3,
             "3": 2,
             "4": 3,

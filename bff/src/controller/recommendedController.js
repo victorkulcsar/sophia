@@ -1,5 +1,6 @@
 export default {
   view: (req, res) => {
-    res.render('template', { page: 'recommended-manager' })
+    const { role } = req.user
+    res.render('template', { page: `recommended-${role}` })
   }
 }

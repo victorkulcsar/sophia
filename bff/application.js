@@ -17,6 +17,9 @@ server.route('/data')
   .get(auth, controller.dataController.get)
   .post(auth, controller.dataController.post)
 
+server.route('/data/squads')
+  .get(auth, controller.dataController.squads)
+
 server.route('/users')
   .get(auth, controller.userController.view)
 

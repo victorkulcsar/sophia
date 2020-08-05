@@ -6,7 +6,7 @@ export default {
     res.render('template', { page: 'login' })
   },
   loginData: ({ body }, res) => {
-    const userMatch = data.JsonAllUsers().find(user => user.name === body.name)
+    const userMatch = data.selectAllUsers().find(user => user.user === body.name)
     if (!userMatch) {
       res.json({ token: null })
       return

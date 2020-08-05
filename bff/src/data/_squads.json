@@ -1,0 +1,24 @@
+{
+  "data": [
+    {
+      "name": "foo-fighters",
+      "lider": 2,
+      "team": [22]
+    },
+    {
+      "name": "beetles",
+      "lider": 12,
+      "team": []
+    },
+    {
+      "name": "the-who",
+      "lider": 2,
+      "team": []
+    },
+    {
+      "name": "led-zeplin",
+      "lider": 22,
+      "team": []
+    }
+  ]
+}

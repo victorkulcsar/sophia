@@ -1,5 +1,6 @@
 export default {
   view: (req, res) => {
-    res.render('template', { page: 'users-manager' })
+    const { role } = req.user
+    res.render('template', { page: `users-${role}` })
   },
 }
