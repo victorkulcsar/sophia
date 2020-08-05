@@ -1,11 +1,11 @@
 const env = { 
   production: {
-    port: 21198
+    port: 21188
   },
   development: {
     port: 3000
   }
 } 
 
-console.log(process.argv)
-export default env[process.argv[2] || "development"];
+console.log(process.env.staging)
+export default env[process.env.staging || "development"];
