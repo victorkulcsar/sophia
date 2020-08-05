@@ -1,7 +1,0 @@
-{
-  "users": 
-    [
-      { "id": 22, "name": "laercio", "pass": "123456", "role": "default" },
-      { "id": 59,"name": "manager", "pass": "123456", "role": "manager" }
-    ]
-}

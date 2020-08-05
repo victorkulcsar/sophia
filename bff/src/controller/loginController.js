@@ -1,4 +1,4 @@
-import login from './../data/users.json';
+import data from '../model/data'
 import ValidateToken from '../class/ValidateToken';
 
 export default {
@@ -6,7 +6,7 @@ export default {
     res.render('template', { page: 'login' })
   },
   loginData: ({ body }, res) => {
-    const userMatch = login.users.find(user => user.name === body.name)
+    const userMatch = data.JsonAllUsers().find(user => user.name === body.name)
     if (!userMatch) {
       res.json({ token: null })
       return

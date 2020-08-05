@@ -1,25 +1,41 @@
 import path from 'path'
-import fs from 'fs';
+import fs from 'fs';  
+import jsonFormat from 'json-format';
+import moment from 'moment';
+
+const actualDate = moment().format("MM-YYYY");
 
 export default {
   JsonByModelo() {
-    return require('../data/modelo.json');
+    return require('../data/_knowledge.json');
+  },
+
+  JsonAllUsers() {
+    return require('./../data/_users.json').data;
   },
 
   JsonByUser(id) {
-    return require(`../data/${id}.json`);
+    return require('./../data/_users.json').data.find(item => item.id === id);
   },
 
-  file(id) {
-    return `${path.resolve(__dirname, `../data/${id}.json`)}`;
+  knowledgeByUser(id) {
+    return this.JsonByUser(id).knowledge.pop();
+  },
+
+  actualKnowledge (user) {
+    return user.knowledge.find(item => item[actualDate])[actualDate]
   },
 
   findDataById(id) {
     const { data: modelo } = this.JsonByModelo();
     const user = this.JsonByUser(id);
+    const knowledge = this.actualKnowledge(user)
+
+    console.log(knowledge)
+
 
     const data = modelo.map(item => {
-      item.conhecimento = user[`${item.id}`] || 0;
+      item.conhecimento = knowledge[`${item.id}`] || 0;
       return item
     });
     
@@ -31,15 +47,30 @@ export default {
   },
 
   writeFile(userId, id, nivel) {
-    const data = this.JsonByUser(userId)
-    data[`${id}`] = parseInt(nivel);
+    const config = {
+      type: 'space',
+      size: 2
+    }
+
+    const data = this.JsonAllUsers().map(user => {
+      if (user.id === userId) {
+        user.knowledge.map(item => {
+          if (item[actualDate]) {
+            item[actualDate][`${id}`] = parseInt(nivel)
+          }
+          return item
+        })
+      }
+      return user
+    })
+
 
     fs.writeFileSync(
-      this.file(userId), 
-      JSON.stringify(data)
+      `${path.resolve(__dirname, `../data/_users.json`)}`,
+      jsonFormat({ data }, config)
     );
 
-    return data;
+    return this.JsonByUser(userId)
   }
   
 }
