@@ -6,7 +6,7 @@ const server = new Server()
 
 // data
 server.route('/data/login')
-  .post(auth, controller.loginController.post)
+  .post(controller.loginController.post)
 
 server.route('/data/user')
   .get(auth, controller.userController.get)

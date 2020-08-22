@@ -27,7 +27,7 @@
       "pass": "123456",
       "role": "teamlead",
       "area": "Lider Tecnico",
-      "avatar": "pessoa.svg",
+      "avatar": "japanese.svg",
       "hierarquia": [1,1,1,1]
     },
     {
@@ -66,7 +66,7 @@
       "pass": "123456",
       "role": "default",
       "area": "Desenvolvedor",
-      "avatar": "pessoa.svg",
+      "avatar": "punk-1.svg",
       "knowledge": [
         {
           "06-2020": {
