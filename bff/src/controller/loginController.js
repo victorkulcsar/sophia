@@ -3,7 +3,7 @@ import ValidateToken from '../class/ValidateToken';
 
 export default {
   view: (req, res) => {
-    res.render('template', { page: 'login' })
+    res.render('login', { page: 'login' })
   },
   loginData: ({ body }, res) => {
     const userMatch = data.selectAllUsers().find(user => user.user === body.name)
