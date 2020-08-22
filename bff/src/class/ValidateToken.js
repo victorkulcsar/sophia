@@ -3,7 +3,7 @@ var jwt = require('jsonwebtoken');
 export default class ValidateToken {
 
   constructor() {
-    this.SECRET = "2020aihpos";
+    this.SECRET = "2020pammaet";
     this.expires = 1200; // 20 min
   }
 

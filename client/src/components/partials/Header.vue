@@ -83,7 +83,7 @@
           </b-dropdown-item>
           <b-dropdown-item class="preview-item">
             <div class="preview-thumbnail">
-              <img src="../../assets/images/person/pessoa3.svg" alt="image" class="img-sm profile-pic">
+              <img src="../../assets/images/avatar/boy-2.svg" alt="image" class="img-sm profile-pic">
             </div>
             <div class="preview-item-content flex-grow py-2">
               <p class="preview-subject ellipsis font-weight-medium text-dark">Marian Garner </p>
@@ -92,7 +92,7 @@
           </b-dropdown-item>
           <b-dropdown-item class="preview-item">
             <div class="preview-thumbnail">
-              <img src="../../assets/images/person/pessoa1.svg" alt="image" class="img-sm profile-pic">
+              <img src="../../assets/images/avatar/028-woman.svg" alt="image" class="img-sm profile-pic">
             </div>
             <div class="preview-item-content flex-grow py-2">
               <p class="preview-subject ellipsis font-weight-medium text-dark">David Grey</p>
@@ -101,7 +101,7 @@
           </b-dropdown-item>
           <b-dropdown-item class="preview-item">
             <div class="preview-thumbnail">
-              <img src="../../assets/images/person/pessoa2.svg" alt="image" class="img-sm profile-pic">
+              <img src="../../assets/images/avatar/004-man.svg" alt="image" class="img-sm profile-pic">
             </div>
             <div class="preview-item-content flex-grow py-2">
               <p class="preview-subject ellipsis font-weight-medium text-dark">Travis Jenkins</p>
@@ -111,7 +111,7 @@
         </b-nav-item-dropdown>
         <b-nav-item-dropdown right class="preview-list">
           <template slot="button-content">
-            <img src="../../assets/images/person/pessoa.svg" alt="profile image" class="img-xs rounded-circle" />
+            <img :src="imageAvatar" alt="profile image" class="img-xs rounded-circle" />
           </template>
           <b-dropdown-item href="#" class="preview-item flex-wrap">Profile</b-dropdown-item>
           <b-dropdown-item href="#" class="preview-item flex-wrap">Signout</b-dropdown-item>
@@ -124,10 +124,28 @@
   </b-navbar>
 </template>
 
-<script lang="js">
+<script>
+import { mapActions, mapGetters } from 'vuex'
+
 export default {
   name: 'app-header',
+  props: {
+    avatar: String
+  },
+  mounted () {
+    this.setUser()
+  },
+  computed: {
+    ...mapGetters('user', ['getUser']),
+    imageAvatar () {
+      const { avatar } = this.getUser
+      return !avatar
+        ? ''
+        : require(`../../assets/images/avatar/${avatar}`)
+    }
+  },
   methods: {
+    ...mapActions('user', ['setUser']),
     collapedMobileSidebar: () => {
       document.querySelector('.sidebar').classList.toggle('active')
     }

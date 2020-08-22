@@ -1,7 +1,7 @@
 <template>
   <section class="tables">
     <div class="row">
-      <div class="col-lg-12 grid-margin stretch-card">
+      <div class="col-lg-12 grid-margin stretch-card shadow">
         <div class="card">
           <div class="card-body">
             <h4 class="card-title">Conhecimentos</h4>

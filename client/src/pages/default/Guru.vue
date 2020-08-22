@@ -1,22 +1,24 @@
 <template>
   <div class="row">
-    <div class="col-12">
-      <h4 class="card-title">Gurus</h4>
+    <div class="col-12 shadow">
+      <b-card>
+        <h4 class="card-title">Gurus</h4>
 
-      <b-table
-        bordered
-        responsive
-        head-variant="light"
-        :items="data"
-        :fields="fields"
-        ticky-header="200px"
-        tbody-tr-class="info"
-      >
+        <b-table
+          bordered
+          responsive
+          head-variant="light"
+          :items="data"
+          :fields="fields"
+          ticky-header="200px"
+          tbody-tr-class="info"
+        >
 
-      <template v-slot:cell(Gurus)>
-        <a href="#">mostrar</a>
-      </template>
-      </b-table>
+        <template v-slot:cell(Gurus)>
+          <a href="#">mostrar</a>
+        </template>
+        </b-table>
+      </b-card>
     </div>
   </div>
 </template>

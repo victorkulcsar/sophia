@@ -6,14 +6,18 @@
       "user": "levi",
       "pass": "123456",
       "role": "manager",
+      "area": "Gerente",
+      "avatar": "pessoa.svg",
       "hierarquia": [1,1,1,1]
     },
     {
       "id": 2,
-      "name": "Jeanne Gisele",
+      "name": "Jeanne Oliveira",
       "user": "jeh",
       "pass": "123456",
       "role": "teamlead",
+      "area": "Lider Tecnico",
+      "avatar": "034-woman.svg",
       "hierarquia": [1,1,1,1]
     },
     {
@@ -22,6 +26,8 @@
       "user": "taqueta",
       "pass": "123456",
       "role": "teamlead",
+      "area": "Lider Tecnico",
+      "avatar": "pessoa.svg",
       "hierarquia": [1,1,1,1]
     },
     {
@@ -30,6 +36,8 @@
       "user": "deia",
       "pass": "123456",
       "role": "seniormanager",
+      "area": "Gerente",
+      "avatar": "pessoa.svg",
       "hierarquia": [1,1,1,1]
     },
     {
@@ -38,6 +46,8 @@
       "user": "marcinha",
       "pass": "123456",
       "role": "director",
+      "area": "Gerente",
+      "avatar": "pessoa.svg",
       "hierarquia": [1,1,1,1]
     },
     {
@@ -45,14 +55,18 @@
       "name": "Krieger",
       "user": "krig",
       "pass": "123456",
+      "area": "Gerente",
+      "avatar": "pessoa.svg",
       "role": "chief"
     },
     {
       "id": 22,
-      "name": "laercio",
+      "name": "Laercio Nogueira",
       "user": "lala",
       "pass": "123456",
       "role": "default",
+      "area": "Desenvolvedor",
+      "avatar": "pessoa.svg",
       "knowledge": [
         {
           "06-2020": {

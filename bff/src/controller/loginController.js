@@ -2,10 +2,10 @@ import data from '../model/data'
 import ValidateToken from '../class/ValidateToken';
 
 export default {
-  view: (req, res) => {
+  get: (req, res) => {
     res.render('login', { page: 'login' })
   },
-  loginData: ({ body }, res) => {
+  post: ({ body }, res) => {
     const userMatch = data.selectAllUsers().find(user => user.user === body.name)
     if (!userMatch) {
       res.json({ token: null })
@@ -18,6 +18,5 @@ export default {
       const token = new ValidateToken().generateToken(userMatch)
       res.json({ token })
     }
-    
   }
 }
