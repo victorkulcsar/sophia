@@ -6,7 +6,8 @@ import graphicController from './graphicController'
 import userController from './userController'
 import editorController from './editorController'
 import guruController from './guruController'
-import recommendedController from './recommendedController'
+import questController from './questController'
+import skillController from './skillController'
 
 module.exports = {
   loginController,
@@ -17,5 +18,6 @@ module.exports = {
   userController,
   editorController,
   guruController,
-  recommendedController,
+  questController,
+  skillController
 }

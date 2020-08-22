@@ -1,13 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
-<meta name="Description">
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> Sophia </title>
-</head>
-<body>
-  <div id="root">
-    <{{page}}-page></{{page}}-page>
-  </div>
-  <script src="static/build.js"></script> 
-</body>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> Teammap </title>
+  </head>
+  <body>
+    <div id="app">
+      <div class="container-scroller">
+        <div><app-header/></div>
+        <div class="container-fluid page-body-wrapper">
+          <div class="mt-5">
+            <app-sidebar/>
+          </div>
+          <div class="main-panel mt-3">
+            <div class="content-wrapper mt-5">
+              <{{page}}-page></{{page}}-page>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="static/build.js"></script> 
+  </body>
+</html>
+    
