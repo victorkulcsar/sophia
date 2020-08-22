@@ -1,127 +1,178 @@
 <template>
-<div>
-  <Navbar :menus="menus"/>
+  <div class="row">
+    <div class="col-12">
+      <h4 class="card-title">Gurus</h4>
 
-  <v-breadcrumbs :items="items" />
+      <b-table
+        bordered
+        responsive
+        head-variant="light"
+        :items="data"
+        :fields="fields"
+        ticky-header="200px"
+        tbody-tr-class="info"
+      >
 
-  <v-container fluid>
-    <v-row
-      :align="alignment"
-      :justify="justify"
-      class="grey lighten-5"
-    >
-      <v-col>
-        
-        <SimpleTable> 
-          <template v-slot:th>
-            <th
-              class="text-left" 
-              v-for="(legend, index) in legends" 
-              :key="index"
-              :id="index"
-            >
-              {{ legend.toUpperCase() }}
-            </th>
-            <th id="0" />
-          </template>
-
-          <template v-slot:td>
-            <Fragment 
-              v-for="(item, index) in filtered" 
-              :key="index"
-            >
-              <tr>
-                <td>{{ item.area }}</td>
-                <td>{{ item.sub }}</td>
-                <td>{{ item.tecnologia }}</td>
-                <td>
-                  <button @click="() => item.open = !item.open">
-                    <img src="../../assets/arrow-down.svg" alt="arrow-down" width="20px">
-                  </button>
-                </td> 
-              </tr>
-              <tr v-if="item.open" class="sub-item">
-                <td>Laercio Nogueria</td>
-                <td>Analista de Desenvolvimento</td>
-                <td>Dex</td>
-                <td>laercio.nogueira@telefonica.com</td>
-              </tr>
-              <tr v-if="item.open" class="sub-item">
-                <td>Marcela Salvadori</td>
-                <td>Analista de Desenvolvimento</td>
-                <td>Equipe 2</td>
-                <td>marcela.salvadori@telefonica.com</td>
-              </tr>
-              <tr v-if="item.open" class="sub-item">
-                <td>Fernando Silva</td>
-                <td>Arquitetura</td>
-                <td>Equipe 3</td>
-                <td>silva.fernando@telefonica.com</td>
-              </tr>
-              <tr v-if="item.open" class="sub-item">
-                <td>Marcelo Ricardo</td>
-                <td>Analista de Desenvolvimento</td>
-                <td>Equipe 1</td>
-                <td>marcelo.ricardo@telefonica.com</td>
-              </tr>
-            </Fragment>
-          </template>
-        </SimpleTable>
-  
-      </v-col>
-    </v-row>
-  </v-container>
-</div>
+      <template v-slot:cell(Gurus)>
+        <a href="#">mostrar</a>
+      </template>
+      </b-table>
+    </div>
+  </div>
 </template>
 
 <script>
-import axios from 'axios';
-import Navbar from '../../components/Navbar.vue'
-import SimpleTable from '../../components/SimpleTable.vue'
-import { Fragment } from 'vue-fragment'
-
 export default {
-  components: { Navbar, SimpleTable, Fragment },
-  computed: {
-    filtered () {
-      return this.search ? 
-        this.data
-          .filter(item => item.conhecimento === this.search) :
-        this.data
-      },
-  },
-  async created() {
-    const { data } = await axios.get("/data")
-    this.data = data.map(item => ({
-      ...item,
-      open: false,
-    }));
-  },
   data: () => ({
-    data: [],
-    legends: ["area", "sub", "tecnologia"],
-    search: "",
-    menus: {
-      items: [
-        { item: 'Principal', link: '/dashboard' },
-        { item: 'Graficos', link: '/graphic' },
-        { item: 'Usuarios', link: '/users' },
-        { item: 'Edição', link: '/editor' },
-      ],
-      dropdown: []
-    },
-    items: [
+    value: 0,
+    data: [
       {
-        text: 'Dashboard',
-        disabled: false,
-        href: 'dashboard',
+        Area: 'Backend',
+        Sub: 'Banco de dados',
+        Tecnologia: 'MongoDB',
+        value: 1,
+        _rowVariant: ''
       },
       {
-        text: 'Guru',
-        disabled: false,
-        href: 'guru',
+        Area: 'Backend',
+        Sub: 'NodeJS',
+        Tecnologia: 'Oracle Database',
+        value: 3,
+        _rowVariant: ''
       },
+      {
+        Area: 'Backend',
+        Sub: 'Java',
+        Tecnologia: 'Maven',
+        value: 2,
+        _rowVariant: ''
+      },
+      {
+        Area: 'Backend',
+        Sub: 'Test',
+        Tecnologia: 'Spring Framework',
+        value: 0,
+        _rowVariant: ''
+      },
+      {
+        Area: 'Backend',
+        Sub: 'Sistemas',
+        Tecnologia: 'Spring MVC',
+        value: 3,
+        _rowVariant: ''
+      },
+      {
+        Area: 'Frontend',
+        Sub: 'Linguagem',
+        Tecnologia: 'CSS',
+        value: 2,
+        _rowVariant: ''
+      },
+      {
+        Area: 'Backend',
+        Sub: 'NodeJS',
+        Tecnologia: 'Oracle Database',
+        value: 0,
+        _rowVariant: ''
+      },
+      {
+        Area: 'Backend',
+        Sub: 'Java',
+        Tecnologia: 'Maven',
+        value: 1,
+        _rowVariant: ''
+      },
+      {
+        Area: 'Backend',
+        Sub: 'Test',
+        Tecnologia: 'Spring Framework',
+        value: 0,
+        _rowVariant: ''
+      },
+      {
+        Area: 'Backend',
+        Sub: 'Sistemas',
+        Tecnologia: 'Spring MVC',
+        value: 3,
+        _rowVariant: ''
+      },
+      {
+        Area: 'Backend',
+        Sub: 'Banco de dados',
+        Tecnologia: 'MongoDB',
+        value: 1,
+        _rowVariant: ''
+      },
+      {
+        Area: 'Backend',
+        Sub: 'NodeJS',
+        Tecnologia: 'Oracle Database',
+        value: 2,
+        _rowVariant: ''
+      },
+      {
+        Area: 'Backend',
+        Sub: 'Java',
+        Tecnologia: 'Maven',
+        value: 3,
+        _rowVariant: ''
+      },
+      {
+        Area: 'Backend',
+        Sub: 'Test',
+        Tecnologia: 'Spring Framework',
+        value: 0,
+        _rowVariant: ''
+      },
+      {
+        Area: 'Backend',
+        Sub: 'Sistemas',
+        Tecnologia: 'Spring MVC',
+        value: 1,
+        _rowVariant: ''
+      },
+      {
+        Area: 'Frontend',
+        Sub: 'Linguagem',
+        Tecnologia: 'Javascript',
+        value: 3,
+        _rowVariant: ''
+      },
+      {
+        Area: 'Backend',
+        Sub: 'NodeJS',
+        Tecnologia: 'Oracle Database',
+        value: 0,
+        _rowVariant: ''
+      },
+      {
+        Area: 'Backend',
+        Sub: 'Java',
+        Tecnologia: 'Maven',
+        value: 0,
+        _rowVariant: ''
+      },
+      {
+        Area: 'Backend',
+        Sub: 'Test',
+        Tecnologia: 'Spring Framework',
+        value: 0,
+        _rowVariant: ''
+      },
+      {
+        Area: 'Backend',
+        Sub: 'Sistemas',
+        Tecnologia: 'Spring MVC',
+        value: 0,
+        _rowVariant: ''
+      }
     ],
+    fields: [
+      { key: 'Area' },
+      { key: 'Sub' },
+      { key: 'Tecnologia' },
+      { key: 'Gurus' }
+    ]
   })
 }
 </script>

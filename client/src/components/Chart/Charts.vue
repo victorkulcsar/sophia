@@ -1,10 +1,10 @@
 <template>
 <div class="component-charts">
   <p>{{ title }}</p>
-  <VueApexCharts 
+  <VueApexCharts
     height="350"
     class="component-charts--chart"
-    :options="options" 
+    :options="options"
     :type="type"
     :series="series"
   />
@@ -28,13 +28,13 @@ export default {
     },
     series: {
       type: Array,
-      default: [{
+      default: () => [{
         name: '',
         data: []
-      }],
+      }]
     },
-    options: Object,
-  },
+    options: Object
+  }
 }
 </script>
 

@@ -1,63 +1,59 @@
 <template>
-<div>
-  <Navbar :menus="menus"/>
-    <v-container>
-      <v-row>
-        <v-col class="select-user">
-          <span>Selecione um usuario:</span>
-          <select @change="selectedUser">
-            <option value="1">Laercio</option>
-            <option value="2">Pedro</option>
-            <option value="3">Marcelo</option>
-            <option value="4">Joao</option>
-          </select>
-        </v-col>
-      </v-row>
-      <v-row
-        :align="alignment"
-        :justify="justify"
-        class="grey lighten-5"
-      >
-        <v-col>
-          <Charts
-            title="Evolução mensal de conhecimento"
-            :series="data[selected].chart1.series"
-            :options="data[selected].chart1.options"
-          />
-        </v-col>
-        <v-col>
-          <Charts
-            title="Conhecimento por Area"
-            type="bar"
-            :series="data[selected].chart2.series"
-            :options="data[selected].chart2.options"
-          />
-        </v-col>
-      </v-row>
-    </v-container>
-</div>
+  <v-container>
+    <v-row>
+      <v-col class="select-user">
+        <span>Selecione um usuario:</span>
+        <select @change="selectedUser">
+          <option value="1">Laercio</option>
+          <option value="2">Pedro</option>
+          <option value="3">Marcelo</option>
+          <option value="4">Joao</option>
+        </select>
+      </v-col>
+    </v-row>
+    <v-row
+      :align="alignment"
+      :justify="justify"
+      class="grey lighten-5"
+    >
+      <v-col>
+        <Charts
+          title="Evolução mensal de conhecimento"
+          :series="data[selected].chart1.series"
+          :options="data[selected].chart1.options"
+        />
+      </v-col>
+      <v-col>
+        <Charts
+          title="Conhecimento por Area"
+          type="bar"
+          :series="data[selected].chart2.series"
+          :options="data[selected].chart2.options"
+        />
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
-import Navbar from '../../components/Navbar.vue'
-import Charts from '../../components/Charts.vue'
+import Charts from '../../components/Chart/Charts.vue'
 
 export default {
   components: {
-    Navbar, Charts
+    Charts
   },
   methods: {
-    selectedUser(event) {
-      this.selected = event.target.value;
+    selectedUser (event) {
+      this.selected = event.target.value
     },
     modelo (data, series) {
       return {
         chart1: {
-          series:[{
+          series: [{
             name: 'skill',
-            data,
+            data
           }],
-          options:{
+          options: {
             xaxis: {
               categories: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun']
             }
@@ -65,7 +61,7 @@ export default {
         },
         chart2: {
           series,
-          options:{
+          options: {
             chart: {
               type: 'bar',
               height: 350,
@@ -90,11 +86,11 @@ export default {
             }],
             plotOptions: {
               bar: {
-                horizontal: false,
-              },
+                horizontal: false
+              }
             },
             xaxis: {
-              categories: ['BackEnd', 'FrontEnd', 'DevOps'],
+              categories: ['BackEnd', 'FrontEnd', 'DevOps']
             },
             legend: {
               position: 'right',
@@ -116,20 +112,19 @@ export default {
           { item: 'Principal', link: '/dashboard' },
           { item: 'Graficos', link: '/graphic' },
           { item: 'Usuarios', link: '/users' },
-          { item: 'Edição', link: '/editor' },
+          { item: 'Edição', link: '/editor' }
         ],
         dropdown: [
-          { item:"Todas Squads" },
-          { item: "Foo Fighter" },
-          { item: "The Who" }
+          { item: 'Todas Squads' },
+          { item: 'Foo Fighter' },
+          { item: 'The Who' }
         ]
       },
       data: {
         1: {
           ...this.modelo(
             [30, 36, 42, 45, 60, 62],
-            [
-            {
+            [{
               name: 'Domino',
               data: [12, 40, 31]
             }, {
@@ -142,7 +137,7 @@ export default {
               name: 'Não sei',
               data: [29, 17, 45]
             }
-          ]),
+            ])
         },
         2: {
           ...this.modelo(

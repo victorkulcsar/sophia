@@ -1,101 +1,39 @@
 <template>
   <div>
-  <Navbar :menus="menus"/>
-    <v-container>
-      <v-row
-        :align="alignment"
-        :justify="end"
-        class="grey lighten-5"
-      >
-        <v-col cols="9" />
-        <v-col cols="3">
-          <v-btn small class="primary right" @click="() => dialog = true">
+    <div class="row">
+      <div class="col-9"></div>
+        <div class="col-3">
+          <button class="btn primary right" @click="() => dialog = true">
             Adicionar
-          </v-btn>
-          <v-btn 
-            small 
-            class="error right"
-            :disabled="!checkbox.length"
-          >
+          </button>
+          <button class="btn error right" :disabled="!checkbox.length">
             Remover
-          </v-btn>
-        </v-col>
-      </v-row>
-      <v-row
-        :align="alignment"
-        :justify="justify"
-        class="grey lighten-5"
-      >
-        <v-col>
-          <SimpleTable> 
-            <template v-slot:th >
-              <th id="0" class="text-left">
-                <div>
-                  <i aria-hidden="true" class="v-icon notranslate mdi mdi-checkbox-marked theme--light primary--text"></i>
-                  <input 
-                    @change="checkAll"
-                    type="checkbox"
-                  >
-                </div>
-              </th>
-              <th
-                class="text-left" 
-                v-for="(legend, index) in legends" 
-                :key="index"
-                :id="index"
-              >
-                {{ legend.toUpperCase() }}
-              </th>
-              <th id="0"></th>
-            </template>
-
-            <template v-slot:td>
-              <tr 
-                v-for="item in data" 
-                :key="item.name"
-              >
-                <td>
-                  <div>
-                    <i aria-hidden="true" class="v-icon notranslate mdi mdi-checkbox-marked theme--light primary--text"></i>
-                    <input 
-                      id="input-1840" 
-                      role="checkbox" 
-                      type="checkbox" 
-                      :value="item.id"
-                      v-model="checkbox"
-                    >
-                  </div>
-                </td>
-                <td>{{ item.area }}</td>
-                <td>{{ item.sub }}</td>
-                <td>{{ item.tecnologia }}</td>
-              </tr>
-            </template>
-          </SimpleTable>
-        </v-col>
-      </v-row>
-    </v-container>
+          </button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+        </div>
+      </div>
     <Modal v-if="dialog"/>
   </div>
 </template>
 
 <script>
-import axios from 'axios';
-import Navbar from '../../components/Navbar.vue'
-import SimpleTable from '../../components/SimpleTable.vue'
+import axios from 'axios'
 import Modal from '../../components/Modal.vue'
 
 export default {
   name: 'Dashboard',
   components: {
-    Navbar, SimpleTable, Modal
+    Modal
   },
-  async created() {
-    const { data } = await axios.get("/editor/data")
-    this.data = data.data;
+  async created () {
+    const { data } = await axios.get('/editor/data')
+    this.data = data.data
   },
   methods: {
-    checkAll(event) {
+    checkAll (event) {
       if (event.target.checked) {
         this.data.forEach(({ id }) => this.checkbox.push(id))
       } else {
@@ -105,22 +43,9 @@ export default {
   },
   data: () => ({
     dialog: false,
-    menus: {
-      items: [
-        { item: 'Principal', link: '/dashboard' },
-        { item: 'Graficos', link: '/graphic' },
-        { item: 'Usuarios', link: '/users' },
-        { item: 'Edição', link: '/editor' },
-      ],
-      dropdown: [
-        { item:"Todas Squads" },
-        { item: "Foo Fighter" },
-        { item: "The Who" }
-      ]
-    },
     data: [],
-    legends: ["area", "sub", "tecnologia"],
-    checkbox: [],
+    legends: ['area', 'sub', 'tecnologia'],
+    checkbox: []
   })
 }
 </script>
@@ -140,7 +65,7 @@ export default {
     justify-content: space-around;
     flex-direction: row;
     align-items: flex-start;
-  
+
     & .todo {
       .board-column-header {
         background: #4A9FF9;

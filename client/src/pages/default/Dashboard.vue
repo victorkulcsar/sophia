@@ -1,176 +1,209 @@
-<template>
-<div>
-  <Navbar :menus="menus"
-  />
+<template lang="html">
+  <section class="dashboard">
+    <div class="row">
+      <Card
+        :title="{
+          text: 'Evolução mensal',
+          icons: 'mdi-gauge text-info'
+        }"
+        value="18%"
+        :subtitle="{
+          text: '32% no mes anterior',
+          icons: 'mdi-alert-octagon'
+        }"
+      />
 
-  <v-breadcrumbs :items="items" />
+      <Card
+        :title="{
+          text: 'Comportamental',
+          icons: 'mdi-rocket text-warning'
+        }"
+        value="25%"
+        :subtitle="{
+          text: '12% no mes anterior',
+          icons: 'mdi-alert-octagon'
+        }"
+      />
 
-  <v-container fluid>
-      <v-row>
-        <v-col>
+      <Card
+        :title="{
+          text: 'Gerencia',
+          icons: 'mdi-city text-teal'
+        }"
+        value="B2B Care"
+      />
 
-          <SimpleTable> 
-            <template v-slot:th>
-              <th
-                class="text-left" 
-                v-for="(legend, index) in legends" 
-                :key="index"
-                :id="index"
-              >
-                {{ legend.toUpperCase() }}
-              </th>
-              <th id="0"></th>
-            </template>
+      <Card
+        :title="{
+          text: 'Pontos',
+          icons: 'mdi-dumbbell text-danger'
+        }"
+        value="200"
+      />
 
-            <template v-slot:td>
-              <tr 
-                v-for="item in filtered" 
-                :key="item.name"
-                :class="checkSkill(item)"
-              >
-                <td>{{ item.area }}</td>
-                <td>{{ item.sub }}</td>
-                <td>{{ item.tecnologia }}</td>
-                <td>
-                  <select
-                    @change="selectSkill($event, item.id)"
-                  >
-                    <option
-                      v-for="(skill, index) in skills" 
-                      :key="index"
-                      :selected="item.conhecimento === index"
-                      :value="index"
-                    >
-                      {{ skill }}
-                    </option>
-                  </select> 
-                </td>
-              </tr>
-            </template>
+    </div>
+    <div class="row">
+      <div class="col-12 grid-margin">
+        <div class="card shadow">
+          <div class="card-body">
+              <div class="row">
+                <div class="col-md-6">
+                  <Charts
+                    title="Evolução mensal de conhecimento"
+                    :series="[{
+                      name: 'Conhecimento',
+                      data: [30, 36, 42, 45, 60, 62]
+                    }]"
+                    :options="{
+                      xaxis: {
+                        categories: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun']
+                      }
+                    }"
+                  />
+                </div>
 
-        </SimpleTable>
-      </v-col>
-    </v-row>
-  </v-container>
-</div>
+                <div class="col-md-6">
+                  <Charts
+                    title="Conhecimento por Area"
+                    type="bar"
+                    :series="[{
+                      name: 'Domino',
+                      data: [44, 55, 41]
+                    }, {
+                      name: 'Sei bem',
+                      data: [13, 23, 20]
+                    }, {
+                      name: 'Sei pouco',
+                      data: [11, 17, 15]
+                    }, {
+                      name: 'Não sei',
+                      data: [21, 7, 25]
+                    }]"
+                    :options="{
+                      chart: {
+                        type: 'bar',
+                        height: 350,
+                        stacked: true,
+                        stackType: '100%',
+                        toolbar: {
+                          show: true
+                        },
+                        zoom: {
+                          enabled: true
+                        }
+                      },
+                      responsive: [{
+                        breakpoint: 480,
+                        options: {
+                          legend: {
+                            position: 'bottom',
+                            offsetX: -10,
+                            offsetY: 0
+                          }
+                        }
+                      }],
+                      plotOptions: {
+                        bar: {
+                          horizontal: false,
+                        },
+                      },
+                      xaxis: {
+                        categories: ['BackEnd', 'FrontEnd', 'DevOps'],
+                      },
+                      legend: {
+                        position: 'right',
+                        offsetY: 40
+                      },
+                      fill: {
+                        opacity: 1
+                      }
+                    }"
+                  />
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 grid-margin">
+        <div class="card shadow">
+          <div class="card-body">
+            <h5 class="card-title mb-4">Novas Conquistas</h5>
+            <div class="fluid-container">
+              <div class="row ticket-card mt-3 pb-2 border-bottom">
+                <div class="col-md-1">
+                  <img class="img-sm mb-2 mb-md-0" src="../../assets/images/objetivo.svg" alt="profile image">
+                </div>
+                <div class="ticket-details col-md-9">
+                  <div class="d-flex">
+                    <p class="text-primary font-weight-bold mr-2 mb-0 no-wrap">Pequeno mestre:</p>
+                    <p class="font-weight-bold mb-0 ellipsis">Voce atribuiu 10 cursos em menos de 1 mes</p>
+                  </div>
+                  <p class="text-small text-gray">Voce acaba de ganhar 50 pontos. Uau!</p>
+                  <div class="row text-muted d-flex mb-2 mb-md-0">
+                    <div class="col-xl-4 d-sm-flex">
+                      <p class="Last-responded mr-2 mb-0">14/07/2020</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row ticket-card mt-3 pb-2 border-bottom">
+                <div class="col-md-1">
+                  <img class="img-sm mb-2 mb-md-0" src="../../assets/images/objetivo.svg" alt="profile image">
+                </div>
+                <div class="ticket-details col-md-9">
+                  <div class="d-flex">
+                    <p class="text-primary font-weight-bold mr-2 mb-0 no-wrap">Guerreiro Sábio:</p>
+                    <p class="font-weight-bold mb-0 ellipsis">Voce atribuiu 25 cursos em menos de 1 mes</p>
+                  </div>
+                  <p class="text-small text-gray">Voce acaba de ganhar 50 pontos. Parabens</p>
+                  <div class="row text-muted d-flex mb-2 mb-md-0">
+                    <div class="col-xl-4 d-sm-flex">
+                      <p class="Last-responded mr-2 mb-0">11/07/2020</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row ticket-card mt-3 pb-2 border-bottom">
+                <div class="col-md-1">
+                  <img class="img-sm mb-2 mb-md-0" src="../../assets/images/objetivo.svg" alt="profile image">
+                </div>
+                <div class="ticket-details col-md-9">
+                  <div class="d-flex">
+                    <p class="text-primary font-weight-bold mr-2 mb-0 no-wrap">Louco pelo conhecimento:</p>
+                    <p class="font-weight-bold mb-0 ellipsis">Voce atribuiu 50 cursos em menos de 1 mes</p>
+                  </div>
+                  <p class="text-small text-gray">Voce acaba de ganhar 50 pontos. Parabens</p>
+                  <div class="row text-muted d-flex mb-2 mb-md-0">
+                    <div class="col-xl-4 d-sm-flex">
+                      <p class="Last-responded mr-2 mb-0">05/06/2020</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </template>
 
 <script>
-import axios from 'axios';
-import Navbar from '../../components/Navbar.vue'
-import SimpleTable from '../../components/SimpleTable.vue'
-
+import Card from '../../components/Card/Card'
+import Charts from '../../components/Chart/Charts'
 export default {
   components: {
-    Navbar, SimpleTable
-  },
-  async created() {
-    const { data } = await axios.get("/data")
-    this.data = data;
-  },
-  computed: {
-    filtered () {
-      return this.search ? 
-        this.data
-          .filter(item => item.conhecimento === this.search) :
-        this.data
-      },
-  },
-  methods: {
-    async selectSkill(event, id) {
-      const { data } = await axios.post('/data', {
-        skill: event.target.value,
-        id
-      })
-      this.data = data;
-    },
-    checkSkill({conhecimento}) {
-      const skillColor = {
-        0: 'danger',
-        1: 'warning',
-        2: 'info',
-        3: 'success',
-      }
-      return skillColor[conhecimento] || 'danger'
-    }
-  },
-  data: () => ({
-    skills: ['Não sei', 'Sei pouco', 'Sei bem', 'Domino'],
-    data: [],
-    legends: ["area", "sub", "tecnologia"],
-    search: "",
-    items: [
-      {
-        text: 'Dashboard',
-        disabled: false,
-        href: 'dashboard',
-      },
-    ],
-    menus: {
-      items: [
-        { item: 'Principal', link: '/dashboard' },
-        { item: 'Graficos', link: '/graphic' },
-        { item: 'Usuarios', link: '/users' },
-        { item: 'Edição', link: '/editor' },
-      ],
-      dropdown: []
-    },
-  })
+    Card,
+    Charts
+  }
 }
 </script>
 
-<style lang="scss" >
-.danger {
-  color: #721c24;
-  background-color: #f8d7da;
-  border-color: #f5c6cb;
-}
-.success {
-  color: #155724;
-  background-color: #d4edda;
-  border-color: #c3e6cb;;
-}
+<style scoped lang="scss">
 
-.info {
-  color: #0c5460;
-  background-color: #d1ecf1;
-  border-color: #bee5eb;
-}
-.warning {
-  color: #856404;
-  background-color: #fff3cd;
-  border-color: #ffeeba;
-}
-.dashboard {
-  background: #eee;
-  &__body {
-    height: 100vh;
-  }
-
-  & .board {
-    width: 1000px;
-    margin-left: 20px;
-    padding-top: 20px;
-    display: flex;
-    justify-content: space-around;
-    flex-direction: row;
-    align-items: flex-start;
-  
-    & .todo {
-      .board-column-header {
-        background: #4A9FF9;
-      }
-    }
-    & .working {
-      .board-column-header {
-        background: #f9944a;
-      }
-    }
-    & .done {
-      .board-column-header {
-        background: #2ac06d;
-      }
-    }
-  }
-}
 </style>
