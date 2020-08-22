@@ -1,6 +1,5 @@
 import loginController from './loginController'
-import dataController from './dataController'
-import dashboardController from './dashboardController'
+import squadController from './squadController'
 import registerController from './registerController'
 import graphicController from './graphicController'
 import userController from './userController'
@@ -8,16 +7,17 @@ import editorController from './editorController'
 import guruController from './guruController'
 import questController from './questController'
 import skillController from './skillController'
+import viewController from './viewController'
 
 module.exports = {
   loginController,
-  dataController,
-  dashboardController,
+  squadController,
   registerController,
   graphicController,
   userController,
   editorController,
   guruController,
   questController,
-  skillController
+  skillController,
+  viewController,
 }
