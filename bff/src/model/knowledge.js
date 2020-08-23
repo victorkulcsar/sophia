@@ -9,39 +9,77 @@ const actualDate = moment().format("MM-YYYY");
 
 export default {
   selectKnowledge() {
-    return require('../data/_knowledge.json');
-  },
-  
-  selectLastKnowledgeByUser(id) {
-    return users.selectByUser(id).knowledge.pop();
+    const { data } = require('../data/_knowledge.json');
+    return data
   },
 
-  selectActualKnowledgeByUser (user) {
-    return user.knowledge.find(item => item[actualDate])[actualDate]
+  _createKnowledgeDefault() {
+    const data = this.selectKnowledge()
+    const knowledge = {}
+
+    data.forEach(item => {
+      knowledge[`${item.id}`] = 0
+    })
+    
+    return knowledge
+  },
+
+  _verifyIsExistKnowledge(user) {
+    const knowledge = user.knowledge
+    return knowledge.length
+  },
+
+  _verifyIsActualKnowledge(user) {
+    const knowledge = user.knowledge.find(item => item[actualDate])
+    return knowledge
+  },
+
+  _createNewKnowledge({ id }, oldKnowledge) {
+    const knowledge = oldKnowledge ? oldKnowledge : this._createKnowledgeDefault()
+
+    const data = users.selectAllUsers()
+      .map(user => {
+        if (user.id === id) {
+          user.knowledge.push({ [`${actualDate}`]: knowledge })
+        }
+        return user
+      })
+    
+    this._writeFile(data)
+  },
+
+  _selectLastKnowledgeByUser(id) {
+    const { knowledge } = users.selectByUser(id)
+    const legend = Object.keys(knowledge.slice(-1)[0])[0]
+    return knowledge.slice(-1)[0][legend]
   },
 
   selectKnowlegeByUser(id) {
     const user = users.selectByUser(id);
-    const knowledge = this.selectActualKnowledgeByUser(user)
+    
+    if (!this._verifyIsExistKnowledge(user)) {
+      this._createNewKnowledge(user)
+      this.selectKnowlegeByUser(id)
+    }
+      
+    if (!this._verifyIsActualKnowledge(user)) {
+      const oldKnowledge = this._selectLastKnowledgeByUser(id)
+      this._createNewKnowledge(user, oldKnowledge)
+      this.selectKnowlegeByUser(id)
+    }
 
-    const data = this.selectKnowledge().data.map(item => {
+    const knowledge = user.knowledge.find(item => item[actualDate])[actualDate]
+    const data = this.selectKnowledge().map(item => {
       item.conhecimento = knowledge[`${item.id}`] || 0;
       return item
     });
-    
-    if (!data) {
-      return { data: [] }
-    } 
-  
-    return data
+
+    return data || { data: [] }
+
   },
   
   updateKnowlageByUser(userId, id, nivel) {
-    const config = {
-      type: 'space',
-      size: 2
-    }
-
+    
     const data = users.selectAllUsers().map(user => {
       if (user.id === userId) {
         user.knowledge.map(item => {
@@ -55,11 +93,20 @@ export default {
     })
 
 
+    this._writeFile(data)
+
+    return users.selectByUser(userId)
+  },
+
+  _writeFile (data) {
+    const config = {
+      type: 'space',
+      size: 2
+    }
+
     fs.writeFileSync(
       `${path.resolve(__dirname, `../data/_users.json`)}`,
       jsonFormat({ data }, config)
     );
-
-    return users.selectByUser(userId)
   }
 }
