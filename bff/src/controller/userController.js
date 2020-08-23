@@ -2,7 +2,6 @@ import db from '../model/data'
 
 export default {
   get: (req, res) => {
-    const skills = role ==='default' ? db.selectKnowlegeByUser(req.user.id) : null
     const { role, id } = req.user
     const { name, area, avatar } = db.selectByUser(id)
     res.json({ 
@@ -11,7 +10,6 @@ export default {
       id, 
       role, 
       avatar, 
-      ...(skills && { skills })
     })
   },
 

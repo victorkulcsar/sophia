@@ -5,7 +5,7 @@ import userController from './userController'
 import editorController from './editorController'
 import guruController from './guruController'
 import questController from './questController'
-import skillController from './skillController'
+import knowledgeController from './knowledgeController'
 import viewController from './viewController'
 
 module.exports = {
@@ -16,6 +16,6 @@ module.exports = {
   editorController,
   guruController,
   questController,
-  skillController,
+  knowledgeController,
   viewController,
 }

@@ -10,7 +10,10 @@ server.route('/data/login')
 
 server.route('/data/user')
   .get(auth, controller.userController.get)
-  //.post(auth, controller.userController.post)
+
+server.route('/data/knowledge')
+  .get(auth, controller.knowledgeController.get)
+  .post(auth, controller.knowledgeController.post)
 
 server.route('/data/editor')
   .get(auth, controller.editorController.get)
