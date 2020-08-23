@@ -140,7 +140,7 @@ export default {
     imageAvatar () {
       const { avatar } = this.getUser
       return !avatar
-        ? ''
+        ? require(`../../assets/images/user.png`)
         : require(`../../assets/images/avatar/${avatar}`)
     }
   },

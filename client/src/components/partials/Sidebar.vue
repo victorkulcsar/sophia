@@ -10,8 +10,8 @@
               <span class="online-status online"></span>
             </div>
             <div class="profile-name">
-              <p class="name">{{ getUser.name }}</p>
-              <p class="designation">{{ getUser.area }}</p>
+              <p class="name">{{ getUser.name || 'carregando...' }}</p>
+              <p class="designation">{{ getUser.area || 'carregando...'}}</p>
               <div class="badge badge-teal mx-auto mt-3">Online</div>
             </div>
           </div>
@@ -84,7 +84,7 @@ export default {
     imageAvatar () {
       const { avatar } = this.getUser
       return !avatar
-        ? ''
+        ? require(`../../assets/images/user.png`)
         : require(`../../assets/images/avatar/${avatar}`)
     }
   }
