@@ -38,7 +38,7 @@
           />
 
           <ItemMenu
-            name="Quest"
+            name="Desafio"
             icon="04.png"
             to="/quest"
           />
@@ -46,13 +46,13 @@
 
       <div v-if="getUser.role === 'teamlead'">
         <ItemMenu
-          name="Graphic"
+          name="Graficos"
           icon="05.png"
           to="/graphic"
         />
 
         <ItemMenu
-          name="Users"
+          name="Usuarios"
           icon="08.png"
           to="/users"
         />
