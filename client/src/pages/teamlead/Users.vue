@@ -1,38 +1,35 @@
 <template>
-  <v-container>
-    <v-row>
-      <v-col class="select-user">
-        <span>Selecione um usuario:</span>
-        <select @change="selectedUser">
-          <option value="1">Laercio</option>
-          <option value="2">Pedro</option>
-          <option value="3">Marcelo</option>
-          <option value="4">Joao</option>
-        </select>
-      </v-col>
-    </v-row>
-    <v-row
-      :align="alignment"
-      :justify="justify"
-      class="grey lighten-5"
-    >
-      <v-col>
+  <b-card class="shadow">
+    <div class="row">
+      <div class="col-12">
+          <b-form-group id="input-group-3" label="Selecione um usuario:" label-for="input-3">
+            <b-form-select
+              id="input-3"
+              v-model="selected"
+              :options="users"
+            >
+          </b-form-select>
+        </b-form-group>
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col-6">
         <Charts
           title="Evolução mensal de conhecimento"
           :series="data[selected].chart1.series"
           :options="data[selected].chart1.options"
         />
-      </v-col>
-      <v-col>
+      </div>
+      <div class="col-6">
         <Charts
           title="Conhecimento por Area"
           type="bar"
           :series="data[selected].chart2.series"
           :options="data[selected].chart2.options"
         />
-      </v-col>
-    </v-row>
-  </v-container>
+      </div>
+    </div>
+  </b-card>
 </template>
 
 <script>
@@ -106,6 +103,12 @@ export default {
   },
   data: function () {
     return {
+      users: [
+        { text: 'Laercio', value: 1 },
+        { text: 'Marcelo', value: 2 },
+        { text: 'Pedro', value: 3 },
+        { text: 'Joao', value: 4 }
+      ],
       selected: 1,
       menus: {
         items: [

@@ -16,7 +16,8 @@
               :tbody-tr-class="rowClass"
               ticky-header="200px"
             >
-              <template v-slot:cell(Conhecimento)="item" s>
+
+              <template v-slot:cell(Conhecimento)="item">
                 <b-form-spinbutton
                   class="spinbutton_skill"
                   id="sb-days"
@@ -24,8 +25,10 @@
                   :formatter-fn="skillCheck"
                   min="0"
                   max="3"
+                  @input="changeKnowledge(item)"
                 />
               </template>
+
             </b-table>
           </div>
         </div>
@@ -35,6 +38,8 @@
 </template>
 
 <script>
+import knowledgeApi from '../../api/knowledgeApi'
+
 export default {
   methods: {
     skillCheck (value) {
@@ -42,168 +47,35 @@ export default {
     },
     rowClass (item, type) {
       item._rowVariant = this.class[item.value]
+    },
+    async changeKnowledge ({ item }) {
+      console.log(item)
+      const { value, id } = item
+      await knowledgeApi.setNewKnowledge({
+        skill: value,
+        id
+      })
     }
   },
+  async mounted () {
+    const { data } = await knowledgeApi.getKnowledge()
+    this.data = data
+  },
   data: () => ({
-    value: 0,
     skill: ['Não sei', 'Sei Pouco', 'Sem Bem', 'Domino'],
     class: ['danger', 'warning', 'primary', 'success'],
-    data: [
-      {
-        Area: 'Backend',
-        Sub: 'Banco de dados',
-        Tecnologia: 'MongoDB',
-        value: 1,
-        _rowVariant: ''
-      },
-      {
-        Area: 'Backend',
-        Sub: 'NodeJS',
-        Tecnologia: 'Oracle Database',
-        value: 3,
-        _rowVariant: ''
-      },
-      {
-        Area: 'Backend',
-        Sub: 'Java',
-        Tecnologia: 'Maven',
-        value: 2,
-        _rowVariant: ''
-      },
-      {
-        Area: 'Backend',
-        Sub: 'Test',
-        Tecnologia: 'Spring Framework',
-        value: 0,
-        _rowVariant: ''
-      },
-      {
-        Area: 'Backend',
-        Sub: 'Sistemas',
-        Tecnologia: 'Spring MVC',
-        value: 3,
-        _rowVariant: ''
-      },
-      {
-        Area: 'Frontend',
-        Sub: 'Linguagem',
-        Tecnologia: 'CSS',
-        value: 2,
-        _rowVariant: ''
-      },
-      {
-        Area: 'Backend',
-        Sub: 'NodeJS',
-        Tecnologia: 'Oracle Database',
-        value: 0,
-        _rowVariant: ''
-      },
-      {
-        Area: 'Backend',
-        Sub: 'Java',
-        Tecnologia: 'Maven',
-        value: 1,
-        _rowVariant: ''
-      },
-      {
-        Area: 'Backend',
-        Sub: 'Test',
-        Tecnologia: 'Spring Framework',
-        value: 0,
-        _rowVariant: ''
-      },
-      {
-        Area: 'Backend',
-        Sub: 'Sistemas',
-        Tecnologia: 'Spring MVC',
-        value: 3,
-        _rowVariant: ''
-      },
-      {
-        Area: 'Backend',
-        Sub: 'Banco de dados',
-        Tecnologia: 'MongoDB',
-        value: 1,
-        _rowVariant: ''
-      },
-      {
-        Area: 'Backend',
-        Sub: 'NodeJS',
-        Tecnologia: 'Oracle Database',
-        value: 2,
-        _rowVariant: ''
-      },
-      {
-        Area: 'Backend',
-        Sub: 'Java',
-        Tecnologia: 'Maven',
-        value: 3,
-        _rowVariant: ''
-      },
-      {
-        Area: 'Backend',
-        Sub: 'Test',
-        Tecnologia: 'Spring Framework',
-        value: 0,
-        _rowVariant: ''
-      },
-      {
-        Area: 'Backend',
-        Sub: 'Sistemas',
-        Tecnologia: 'Spring MVC',
-        value: 1,
-        _rowVariant: ''
-      },
-      {
-        Area: 'Frontend',
-        Sub: 'Linguagem',
-        Tecnologia: 'Javascript',
-        value: 3,
-        _rowVariant: ''
-      },
-      {
-        Area: 'Backend',
-        Sub: 'NodeJS',
-        Tecnologia: 'Oracle Database',
-        value: 0,
-        _rowVariant: ''
-      },
-      {
-        Area: 'Backend',
-        Sub: 'Java',
-        Tecnologia: 'Maven',
-        value: 0,
-        _rowVariant: ''
-      },
-      {
-        Area: 'Backend',
-        Sub: 'Test',
-        Tecnologia: 'Spring Framework',
-        value: 0,
-        _rowVariant: ''
-      },
-      {
-        Area: 'Backend',
-        Sub: 'Sistemas',
-        Tecnologia: 'Spring MVC',
-        value: 0,
-        _rowVariant: ''
-      }
-    ],
+    data: [],
     fields: [
       { key: 'Area' },
       { key: 'Sub' },
       { key: 'Tecnologia' },
-      { key: 'Conhecimento' }
+      { key: 'Conhecimento', label: '' }
     ]
   })
 }
 </script>
 
 <style scoped lang="scss">
-.modelo {
-  background: red
-}
 .spinbutton_skill {
   background: white;
   width: 170px;

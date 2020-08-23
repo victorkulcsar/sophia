@@ -71,7 +71,7 @@
 </template>
 
 <script>
-import axios from 'axios'
+import loginApi from '../api/loginApi'
 
 export default {
   props: {},
@@ -105,11 +105,11 @@ export default {
       if (this.validateUser()) {
         const {
           data: { token }
-        } = await axios.post('/data/login', {
+        } = await loginApi.login({
           name: this.email.value,
           pass: this.password.value
         })
-        console.log(token)
+
         if (token) {
           this.$cookies.set('hash', token)
           this.$route.push('/dashboard')

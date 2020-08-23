@@ -1,4 +1,4 @@
-import axios from 'axios'
+import userApi from '../api/userApi'
 
 const state = () => ({
   user: {}
@@ -14,7 +14,7 @@ const getters = {
 // actions
 const actions = {
   setUser ({ commit, state }, products) {
-    axios.get('/data/user')
+    userApi.getUser()
       .then(({ data }) => {
         commit('setUser', data)
       })

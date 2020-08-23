@@ -1,4 +1,5 @@
 <template>
+<b-card class="shadow">
   <div class="row">
     <div class="col-6">
       <Charts
@@ -73,6 +74,7 @@
       />
     </div>
   </div>
+</b-card>
 </template>
 
 <script>
