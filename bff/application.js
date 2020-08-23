@@ -21,6 +21,9 @@ server.route('/data/editor')
 server.route('/data/squads')
   .get(auth, controller.squadController.get)
 
+server.route('/data/dashboard')
+  .get(auth, controller.dashboardController.get)
+
 // url views template
 server.route('/')
   .get(controller.loginController.get)

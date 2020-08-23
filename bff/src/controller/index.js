@@ -7,6 +7,7 @@ import guruController from './guruController'
 import questController from './questController'
 import knowledgeController from './knowledgeController'
 import viewController from './viewController'
+import dashboardController from './dashboardController'
 
 module.exports = {
   loginController,
@@ -18,4 +19,5 @@ module.exports = {
   questController,
   knowledgeController,
   viewController,
+  dashboardController,
 }
