@@ -114,8 +114,12 @@ export default {
     Charts
   },
   async mounted () {
-    const { data } = await dashboardApi.getDashboard()
-    this.info = data
+    const data = await dashboardApi.getDashboard()
+    if (data.data) {
+      this.info = data.data
+    } else {
+      this.info = data
+    }
   },
   data: () => ({
     info: {

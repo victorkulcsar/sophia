@@ -81,7 +81,6 @@ export default {
   _reduceKnowledge(data, area, conhecimento) {
     return data.reduce((acc, atual) => {
       if (atual.area === area && atual.conhecimento === conhecimento) {
-        console.log(atual)
         acc++
       }
       return acc;
